@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket-test" {
-    bucket = "unique-buckettest-caiosouza"
+    bucket = "bucketglobal-csv-nascimento"
 
     tags = {
         Name = "Bucket-test"
