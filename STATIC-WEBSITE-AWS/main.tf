@@ -1,4 +1,4 @@
-#core to start the code
+#the code start here!
 terraform {
   required_providers {
     aws = {
