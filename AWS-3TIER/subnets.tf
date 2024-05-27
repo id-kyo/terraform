@@ -1,5 +1,5 @@
 ###############################
-### PUBLIC SUBNET - 1 ##########
+### PUBLIC SUBNET - 1 #########
 ###############################
 
 resource "aws_subnet" "public_web_subnet-1" {
@@ -14,7 +14,7 @@ resource "aws_subnet" "public_web_subnet-1" {
 }
 
 ###############################
-### PUBLIC SUBNET - 2 ##########
+### PUBLIC SUBNET - 2 #########
 ###############################
 
 resource "aws_subnet" "public_web_subnet-2" {
@@ -29,7 +29,7 @@ resource "aws_subnet" "public_web_subnet-2" {
 }
 
 ###############################
-### PRIVATE SUBNET - 1 ##########
+### PRIVATE SUBNET - 1 ########
 ###############################
 
 resource "aws_subnet" "private_app_subnet-1" {
@@ -44,7 +44,7 @@ resource "aws_subnet" "private_app_subnet-1" {
 }
 
 ###############################
-### PRIVATE SUBNET - 2 ##########
+### PRIVATE SUBNET - 2 ########
 ###############################
 
 resource "aws_subnet" "private_app_subnet-2" {
@@ -59,7 +59,7 @@ resource "aws_subnet" "private_app_subnet-2" {
 }
 
 ###############################
-### PRIVATE SUBNET-DB - 1 ##########
+### PRIVATE SUBNET-DB - 1 #####
 ###############################
 
 resource "aws_subnet" "private_db_subnet-1" {
@@ -74,7 +74,7 @@ resource "aws_subnet" "private_db_subnet-1" {
 }
 
 ###############################
-### PRIVATE SUBNET-DB - 2 ##########
+### PRIVATE SUBNET-DB - 2 #####
 ###############################
 
 resource "aws_subnet" "private-db-subent-2" {

@@ -8,7 +8,7 @@ variable "vpc_cird" {
 }
 
 #################################################
-#### Categoria de apresentação do CIRD Block 2 #####
+### Categoria de apresentação do CIRD Block 2 ###
 #################################################
 
 variable "public-web-subnet-1-cidr" {
@@ -18,7 +18,7 @@ variable "public-web-subnet-1-cidr" {
 }
 
 #################################################
-# Categoria de apresentação do CIRD Block 2 ####
+### Categoria de apresentação do CIRD Block 2 ###
 #################################################
 
 variable "public-web-subnet-2-cidr" {
@@ -28,7 +28,7 @@ variable "public-web-subnet-2-cidr" {
 }
 
 #################################################
-# Categoria de APP do CIRD Block 1 ####
+######## Categoria de APP do CIRD Block 1 #######
 #################################################
 
 variable "private-app-subnet-1-cidr" {
@@ -38,7 +38,7 @@ variable "private-app-subnet-1-cidr" {
 }
 
 #################################################
-# Categoria de APP do CIRD Block 2 ####
+######## Categoria de APP do CIRD Block 2 #######
 #################################################
 
 variable "private-app-subnet-2-cidr" {
@@ -48,7 +48,7 @@ variable "private-app-subnet-2-cidr" {
 }
 
 #################################################
-# Categoria de Database do CIRD Block 1 ####
+###### Categoria de Database do CIRD Block 1 ####
 #################################################
 
 variable "private-db-subnet-1-cidr" {
@@ -58,7 +58,7 @@ variable "private-db-subnet-1-cidr" {
 }
 
 #################################################
-# Categoria de Database do CIRD Block 2 ####
+##### Categoria de Database do CIRD Block 2 #####
 #################################################
 
 variable "private-db-subnet-2-cidr" {
@@ -67,9 +67,9 @@ variable "private-db-subnet-2-cidr" {
   type = string
 }
 
-#####################################
-# Categoria de APP -- Segurança ####
-####################################
+########################################
+##### Categoria de APP -- Segurança ####
+########################################
 
 variable "ssh-locate" {
   default = "your_ip_address"
@@ -78,8 +78,8 @@ variable "ssh-locate" {
 }
 
 #####################################
-# Instância do BD ##################
-####################################
+######## Instância do BD ############
+#####################################
 
 variable "database-instance-class" {
   default = "db.t2.micro"
@@ -88,8 +88,8 @@ variable "database-instance-class" {
 }
 
 #####################################
-########## Multi-AZ ##################
-####################################
+########## Multi-AZ #################
+#####################################
 
 variable "multi-az-deployment" {
     default = true
