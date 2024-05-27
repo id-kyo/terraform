@@ -61,7 +61,7 @@ variable "private-db-subnet-1-cidr" {
 # Categoria de Database do CIRD Block 2 ####
 #################################################
 
-variable "private-db-subnet-1-cidr" {
+variable "private-db-subnet-2-cidr" {
   default = 10.0.6.0/24
   description = "private_db_subnet2"
   type = string
