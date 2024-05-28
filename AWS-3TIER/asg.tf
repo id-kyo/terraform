@@ -1,6 +1,6 @@
-######################################
-###### ASG FOR PRESENTATION TIER #####
-######################################
+####################################################
+##### AUTO SCALING GROUP FOR PRESENTATION TIER #####
+####################################################
 
 resource "aws_launch_template" "auto-scaling-group" {
   name_prefix = "auto-scaling-group"
@@ -28,9 +28,9 @@ resource "aws_autoscaling_group" "asg-1" {
 }
 
 
-######################################
-###### ASG FOR APPLICATION TIER ######
-######################################
+####################################################
+##### AUTO SCALING GROUP FOR APPLICATION TIER ######
+####################################################
 
 resource "aws_launch_template" "auto-scaling-group-private" {
   name_prefix = "auto-scaling-group-private"

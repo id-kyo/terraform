@@ -15,7 +15,7 @@ resource "aws_security_group" "ssh-security-group" {
     procotol = "tcp"
     cidr_blocks = ["${var.ssh-locate}"]
   }
-    egress = {
+  egress = {
     from_port = 0
     to_port = 0
     procotol = "-1"

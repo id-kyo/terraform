@@ -77,7 +77,7 @@ resource "aws_subnet" "private_db_subnet-1" {
 ### PRIVATE SUBNET-DB - 2 #####
 ###############################
 
-resource "aws_subnet" "private-db-subent-2" {
+resource "aws_subnet" "private-db-subnet-2" {
     vpc_id = aws_vpc.vpc_01.id
     cidr_block =   var.private-db-subnet-2-cidr
     availability_zone = "us-east-1b"
