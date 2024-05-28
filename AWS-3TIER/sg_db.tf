@@ -3,7 +3,7 @@
 #####################################
 
 resource "aws_security_group" "database-security-group" {
-  Name = "Database Server Security Group"
+  name = "Database Server Security Group"
   description = "Ativa o acesso MySQL na porta 3306"
   vpc_id = aws_vpc.vpc_01.id
 
@@ -20,7 +20,7 @@ resource "aws_security_group" "database-security-group" {
     from_port = 0
     to_port = 0
     procotol = "-1"
-    cidr_blocks = [0.0.0.0/0]
+    cidr_blocks = ["0.0.0.0/0"]
   }
   tags = {
     Name = "Database Security Group"
