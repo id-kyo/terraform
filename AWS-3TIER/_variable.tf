@@ -11,7 +11,7 @@ variable "vpc_cidr" {
 ### Categoria de apresentação do CIRD Block 2 ###
 #################################################
 
-variable "public-web-subnet-1-cidr" {
+variable "public_web_subnet_1_cidr" {
   default     = "10.0.1.0/24"
   description = "public_web_subnet1"
   type        = string
@@ -21,7 +21,7 @@ variable "public-web-subnet-1-cidr" {
 ### Categoria de apresentação do CIRD Block 2 ###
 #################################################
 
-variable "public-web-subnet-2-cidr" {
+variable "public_web_subnet_2_cidr" {
   default     = "10.0.2.0/24"
   description = "public_web_subnet2"
   type        = string
@@ -31,7 +31,7 @@ variable "public-web-subnet-2-cidr" {
 ######## Categoria de APP do CIRD Block 1 #######
 #################################################
 
-variable "private-app-subnet-1-cidr" {
+variable "private_app_subnet_1_cidr" {
   default     = "10.0.3.0/24"
   description = "private_app_subnet1"
   type        = string
@@ -41,7 +41,7 @@ variable "private-app-subnet-1-cidr" {
 ######## Categoria de APP do CIRD Block 2 #######
 #################################################
 
-variable "private-app-subnet-2-cidr" {
+variable "private_app_subnet_2_cidr" {
   default     = "10.0.4.0/24"
   description = "private_app_subnet2"
   type        = string
@@ -51,7 +51,7 @@ variable "private-app-subnet-2-cidr" {
 ###### Categoria de Database do CIRD Block 1 ####
 #################################################
 
-variable "private-db-subnet-1-cidr" {
+variable "private_db_subnet_1_cidr" {
   default     = "10.0.5.0/24"
   description = "private_db_subnet2"
   type        = string
@@ -61,7 +61,7 @@ variable "private-db-subnet-1-cidr" {
 ##### Categoria de Database do CIRD Block 2 #####
 #################################################
 
-variable "private-db-subnet-2-cidr" {
+variable "private_db_subnet_2_cidr" {
   default     = "10.0.6.0/24"
   description = "private_db_subnet2"
   type        = string
@@ -71,8 +71,8 @@ variable "private-db-subnet-2-cidr" {
 ##### Categoria de APP -- Segurança ####
 ########################################
 
-variable "ssh-locate" {
-  default     = "your_ip_address"
+variable "ssh_locate" {
+  default     = "0.0.0.0/0"
   description = "ip address"
   type        = string
 }
@@ -81,7 +81,7 @@ variable "ssh-locate" {
 ######## Instância do BD ############
 #####################################
 
-variable "database-instance-class" {
+variable "database_instance_class" {
   default     = "db.t2.micro"
   description = "o tipo de instância da database"
   type        = string
@@ -91,7 +91,7 @@ variable "database-instance-class" {
 ########## Multi-AZ #################
 #####################################
 
-variable "multi-az-deployment" {
+variable "multi_az_deployment" {
   default     = true
   description = "ativação do multi-az"
   type        = bool

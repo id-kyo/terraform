@@ -2,7 +2,7 @@
 ##### AUTO SCALING GROUP FOR PRESENTATION TIER #####
 ####################################################
 
-resource "aws_launch_template" "auto-scaling-group" {
+resource "aws_launch_template" "auto_scaling_group" {
   name_prefix   = "auto-scaling-group"
   image_id      = "ami-052efd3df9dad4825"
   instance_type = "t2.micro"
@@ -10,19 +10,19 @@ resource "aws_launch_template" "auto-scaling-group" {
   user_data     = file("install-apache.sh")
 
   network_interfaces {
-    vpc_security_group_ids = [aws_security_group.webserver-security-group.id]
-    subnet_id              = aws_subnet.public_web_subnet-1.id
+    vpc_security_group_ids = [aws_security_group.webserver_security_group.id]
+    subnet_id              = aws_subnet.public_web_subnet_1.id
   }
 }
 
-resource "aws_autoscaling_group" "asg-1" {
+resource "aws_autoscaling_group" "asg_1" {
   availability_zones = ["us-east-1a"]
   desired_capacity   = 1
   max_size           = 2
   min_size           = 1
 
   launch_template {
-    id      = aws_launch_template.auto-scaling-group.id
+    id      = aws_launch_template.auto_scaling_group.id
     version = "$Latest"
   }
 }
@@ -32,15 +32,15 @@ resource "aws_autoscaling_group" "asg-1" {
 ##### AUTO SCALING GROUP FOR APPLICATION TIER ######
 ####################################################
 
-resource "aws_launch_template" "auto-scaling-group-private" {
+resource "aws_launch_template" "auto_scaling_group_private" {
   name_prefix   = "auto-scaling-group-private"
   image_id      = "ami-052efd3df9dad4825"
   instance_type = "t2.micro"
   key_name      = "source_key"
 
   network_interfaces {
-    vpc_security_group_ids = [aws_security_group.ssh-security-group.id]
-    subnet_id              = aws_subnet.private_app_subnet-1.id
+    vpc_security_group_ids = [aws_security_group.ssh_security_group.id]
+    subnet_id              = aws_subnet.private_app_subnet_1.id
   }
 }
 
@@ -51,7 +51,7 @@ resource "aws_autoscaling_group" "asg-2" {
   min_size           = 1
 
   launch_template {
-    id      = aws_launch_template.auto-scaling-group.id
+    id      = aws_launch_template.auto_scaling_group.id
     version = "$Latest"
   }
 }

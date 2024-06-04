@@ -2,12 +2,12 @@
 ##### WEB APPLICATION LOAD BALANCER #####
 #########################################
 
-resource "aws_alb" "application-load-balancer" { #load balancer para a camada de aplicação
+resource "aws_alb" "application_load_balancer" { #load balancer para a camada de aplicação
   name                       = "web-external-load-balancer"
   internal                   = false
   load_balancer_type         = "application"
-  security_groups            = [aws_security_group.alb-security-group.id]
-  subnets                    = [aws_subnet.public_web_subnet-1.id, aws_subnet.public_web_subnet-2.id]
+  security_groups            = [aws_security_group.alb_security_group.id]
+  subnets                    = [aws_subnet.public_web_subnet_1.id, aws_subnet.public_web_subnet_2.id]
   enable_deletion_protection = false
 
   tags = {
@@ -30,7 +30,7 @@ resource "aws_lb_target_group_attachment" "web-attachment" { #fazendo o attach d
 
 #criando um listner de port 80 para redirecionar para porta 443. "Ouve" na porta 80 e redireciona para a porta 443
 resource "aws_lb_listener" "alb_http_listerner" {
-  load_balancer_arn = aws_alb.application-load-balancer.arn #REVER SE É "aws_alb" ou "aws_lb"
+  load_balancer_arn = aws_alb.application_load_balancer.arn #REVER SE É "aws_alb" ou "aws_lb"
   port              = 80
   protocol          = "HTTP"
 

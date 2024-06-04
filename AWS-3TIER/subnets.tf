@@ -2,9 +2,9 @@
 ### PUBLIC SUBNET - 1 #########
 ###############################
 
-resource "aws_subnet" "public_web_subnet-1" {
+resource "aws_subnet" "public_web_subnet_1" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.public-web-subnet-1-cidr
+  cidr_block              = var.public_web_subnet_1_cidr
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = true
 
@@ -17,9 +17,9 @@ resource "aws_subnet" "public_web_subnet-1" {
 ### PUBLIC SUBNET - 2 #########
 ###############################
 
-resource "aws_subnet" "public_web_subnet-2" {
+resource "aws_subnet" "public_web_subnet_2" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.public-web-subnet-2-cidr
+  cidr_block              = var.public_web_subnet_2_cidr
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = true
 
@@ -32,9 +32,9 @@ resource "aws_subnet" "public_web_subnet-2" {
 ### PRIVATE SUBNET - 1 ########
 ###############################
 
-resource "aws_subnet" "private_app_subnet-1" {
+resource "aws_subnet" "private_app_subnet_1" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private-app-subnet-1-cidr
+  cidr_block              = var.private_app_subnet_1_cidr
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = false
 
@@ -47,9 +47,9 @@ resource "aws_subnet" "private_app_subnet-1" {
 ### PRIVATE SUBNET - 2 ########
 ###############################
 
-resource "aws_subnet" "private_app_subnet-2" {
+resource "aws_subnet" "private_app_subnet_2" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private-app-subnet-1-cidr
+  cidr_block              = var.private_app_subnet_1_cidr
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = false
 
@@ -62,9 +62,9 @@ resource "aws_subnet" "private_app_subnet-2" {
 ### PRIVATE SUBNET-DB - 1 #####
 ###############################
 
-resource "aws_subnet" "private_db_subnet-1" {
+resource "aws_subnet" "private_db_subnet_1" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private-db-subnet-1-cidr
+  cidr_block              = var.private_db_subnet_1_cidr
   availability_zone       = "us-east-1a"
   map_public_ip_on_launch = false
 
@@ -77,9 +77,9 @@ resource "aws_subnet" "private_db_subnet-1" {
 ### PRIVATE SUBNET-DB - 2 #####
 ###############################
 
-resource "aws_subnet" "private-db-subnet-2" {
+resource "aws_subnet" "private_db_subnet_2" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private-db-subnet-2-cidr
+  cidr_block              = var.private_db_subnet_2_cidr
   availability_zone       = "us-east-1b"
   map_public_ip_on_launch = false
 
