@@ -14,7 +14,7 @@ resource "aws_security_group" "database_security_group" {
       from_port        = 3306
       to_port          = 3306
       protocol         = "tcp"
-      cidr_blocks      = ["${aws_security_group.webserver_security_group}"]
+      cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
       security_groups  = []
