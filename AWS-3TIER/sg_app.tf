@@ -2,7 +2,7 @@
 ### SG Application tier (Bastion) ###
 #####################################
 
-resource "aws_security_group" "ssh-security-group" {
+resource "aws_security_group" "ssh_security_group" {
   name        = "SSH Access"
   description = "Permite a porta 22 para acesso ssh"
   vpc_id      = aws_vpc.vpc_01.id

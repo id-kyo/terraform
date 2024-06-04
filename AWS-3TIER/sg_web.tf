@@ -2,7 +2,7 @@
 ####### SG Presentation Tier ########
 #####################################
 
-resource "aws_security_group" "webserver-security-group" {
+resource "aws_security_group" "webserver_security_group" {
   name = "Web server Security Group"
   description = "Permite http/https via Application Load Balancer e SSH via SG"
   vpc_id = aws_vpc.vpc_01.id
@@ -14,21 +14,21 @@ resource "aws_security_group" "webserver-security-group" {
     from_port = 80
     to_port = 80
     protocol = "tcp"
-    cidr_blocks = "${aws.security_group.alb-security-group.id}"
+    cidr_blocks = "${aws_security_group.alb_security_group}"
   },
   {
     description = "https access"
     from_port = 443
     to_port = 443
     protocol = "tcp"
-    cidr_blocks = "${aws.security_group.alb-security-group.id}"
+    cidr_blocks = "${aws_security_group.alb_security_group}"
   },
   {
     description = "ssh access"
     from_port = 22
     to_port = 22
     protocol = "tcp"
-    cidr_blocks = "${aws.security_group.ssh-security-group.id}"
+    cidr_blocks = "${aws_security_group.ssh_security_group}"
   }
   ]
 
