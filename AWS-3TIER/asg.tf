@@ -1,7 +1,6 @@
 ####################################################
 ##### AUTO SCALING GROUP FOR PRESENTATION TIER #####
 ####################################################
-
 resource "aws_launch_template" "auto_scaling_group" {
   name_prefix   = "auto-scaling-group"
   image_id      = "ami-052efd3df9dad4825"
@@ -10,8 +9,8 @@ resource "aws_launch_template" "auto_scaling_group" {
   user_data     = file("install-apache.sh")
 
   network_interfaces {
-    vpc_security_group_ids = [aws_security_group.webserver_security_group.id]
-    subnet_id              = aws_subnet.public_web_subnet_1.id
+    security_groups = [aws_security_group.webserver_security_group.id]
+    subnet_id = aws_subnet.public_web_subnet_1.id
   }
 }
 
@@ -39,7 +38,7 @@ resource "aws_launch_template" "auto_scaling_group_private" {
   key_name      = "source_key"
 
   network_interfaces {
-    vpc_security_group_ids = [aws_security_group.ssh_security_group.id]
+    security_groups = [aws_security_group.ssh_security_group.id]
     subnet_id              = aws_subnet.private_app_subnet_1.id
   }
 }

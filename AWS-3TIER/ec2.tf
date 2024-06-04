@@ -20,7 +20,7 @@ resource "aws_instance" "PublicWebTemplate" {
 ####### EC2 instance app Tier ########
 ######################################
 
-resource "aws_instance" "private-app-template" {
+resource "aws_instance" "private_app_template" {
   ami                    = "ami-052efd3df9dad4825"
   instance_type          = "t2.micro"
   subnet_id              = aws_subnet.private_app_subnet_1.id

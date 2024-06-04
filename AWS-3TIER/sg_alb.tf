@@ -13,23 +13,23 @@ resource "aws_security_group" "alb-security-group" {
     description = "http access"
     from_port = 80
     to_port = 80
-    procotol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    protocol = "tcp"
+    cidr_blocks = "0.0.0.0/0"
   },
   {
     description = "https access"
     from_port = 443
     to_port = 443
-    procotol = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
+    protocol = "tcp"
+    cidr_blocks = "0.0.0.0/0"
   }
   ]
 
   egress = {
     from_port = 0
     to_port = 0
-    procotol = "-1"
-    cidr_blocks = ["0.0.0.0/0"]
+    protocol = "-1"
+    cidr_blocks = "0.0.0.0/0"
   }
 
 tags = {
