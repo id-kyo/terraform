@@ -10,7 +10,7 @@ resource "aws_launch_template" "auto_scaling_group" {
 
   network_interfaces {
     security_groups = [aws_security_group.webserver_security_group.id]
-    subnet_id = aws_subnet.public_web_subnet_1.id
+    subnet_id       = aws_subnet.public_web_subnet_1.id
   }
 }
 
@@ -39,7 +39,7 @@ resource "aws_launch_template" "auto_scaling_group_private" {
 
   network_interfaces {
     security_groups = [aws_security_group.ssh_security_group.id]
-    subnet_id              = aws_subnet.private_app_subnet_1.id
+    subnet_id       = aws_subnet.private_app_subnet_1.id
   }
 }
 
