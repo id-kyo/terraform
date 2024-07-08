@@ -1,14 +1,14 @@
-# Projetos Intermediários de Terraform
+# Projetos Iniciantes de Terraform
 
-Bem-vindo ao diretório de Projetos Intermediários de Terraform! Aqui você encontrará projetos de complexidade média que exploram funcionalidades mais avançadas de Terraform, perfeitos para quem já possui algum conhecimento e quer aprofundar suas habilidades.
+Bem-vindo ao diretório de Projetos Iniciantes de Terraform! Aqui você encontrará projetos simples e introdutórios, perfeitos para quem está começando com Terraform e deseja aprender os conceitos básicos.
 
-## Sobre os Projetos Intermediários
+## Sobre os Projetos Iniciantes
 
-Os projetos neste diretório são considerados intermediários por utilizarem recursos e práticas que vão além dos conceitos básicos. Estes projetos ajudarão você a entender como aplicar funcionalidades mais avançadas e gerenciar infraestruturas de forma mais eficiente.
+Os projetos neste diretório são projetados para fornecer uma introdução prática ao uso do Terraform. Eles cobrem os fundamentos e ajudam você a criar infraestruturas pequenas e simples. Os projetos iniciantes são feitos principalmente utilizando blocos de recursos, o que facilita a compreensão e a aplicação direta dos conceitos básicos.
 
 ## Objetivo
 
-O objetivo dos projetos intermediários é fornecer exemplos práticos que permitem aos usuários expandir seu conhecimento em Terraform e começar a trabalhar em cenários mais complexos. Esses projetos são ideais para quem deseja progredir do nível iniciante para um nível mais avançado.
+O objetivo dos projetos iniciantes é oferecer exemplos práticos que permitam aos novos usuários entender e aplicar os conceitos básicos do Terraform, focando no uso de blocos de recursos. Esses projetos são ideais para quem está começando e quer adquirir confiança na utilização do Terraform.
 
 ## Como Utilizar
 
@@ -18,8 +18,4 @@ O objetivo dos projetos intermediários é fornecer exemplos práticos que permi
 
 ## Contribuições
 
-Contribuições são bem-vindas! Se você tem um projeto intermediário interessante ou melhorias para os projetos existentes, sinta-se à vontade para abrir um pull request. Vamos colaborar e tornar este diretório um recurso ainda mais valioso para a comunidade.
-
----
-
-Essa estrutura de `README.md` explica claramente o propósito dos projetos intermediários e como utilizá-los, sem incluir detalhes sobre a estrutura de arquivos, mantendo a simplicidade e o foco no conteúdo apropriado para projetos intermediários.
+Contribuições são bem-vindas! Se você tem um projeto iniciante interessante ou melhorias para os projetos existentes, sinta-se à vontade para abrir um pull request. Vamos colaborar e tornar este diretório um recurso ainda mais valioso para a comunidade.
