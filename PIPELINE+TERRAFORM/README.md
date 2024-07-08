@@ -1,1 +1,0 @@
-A ideia não é configurar uma pipeline dentro desse repositório, mas sim deixar pronto para que você criar uma a partir do clone dessa.
