@@ -25,7 +25,3 @@ O objetivo deste repositório é fornecer uma coleção de exemplos práticos e 
 ## Contribuições
 
 Contribuições são bem-vindas! Se você tem um projeto interessante ou melhorias para os projetos existentes, sinta-se à vontade para abrir um pull request. Vamos colaborar e tornar este repositório um recurso ainda mais valioso para a comunidade.
-
----
-
-Sinta-se à vontade para ajustar conforme necessário. Essa estrutura fornece uma visão clara do propósito do repositório e como ele está organizado.
