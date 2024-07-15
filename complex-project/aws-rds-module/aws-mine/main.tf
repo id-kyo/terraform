@@ -1,0 +1,17 @@
+# ===============================================
+# TERRAFORM REQUIRED
+# ===============================================
+terraform {
+  required_version = ">= 1.0"
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.47"
+    }
+  }
+}
+
+provider "aws" {
+  region = local.region
+}
