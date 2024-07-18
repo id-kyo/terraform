@@ -1,3 +1,6 @@
+# ===============================================
+# OUTPUTS
+# ===============================================
 output "caller_identity_account_id" {
   description = "The ID of the AWS account"
   value       = module.iam_account.caller_identity_account_id
