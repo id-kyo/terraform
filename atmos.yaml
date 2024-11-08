@@ -1,0 +1,4 @@
+stacks:
+  base_path: ./
+  included_paths:
+    - ./simple-project/aws-vpc
