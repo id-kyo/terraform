@@ -1,13 +1,13 @@
 #launch config
 resource "aws_launch_configuration" "launch-terraform" {
   name = "launch-terraform"
-  image_id = "ami-22222222" #vai ter que procurar uma ID
+  image_id = "ami-0c55b159cbfafe01e"
   instance_type = "t2.micro"
 }
 
 #autoscaling
 resource "aws_autoscaling_group" "ASG-terraform" {
-  desired_capacity     = 2 #valores aleatórios
+  desired_capacity     = 2
   max_size             = 4
   min_size             = 1
   vpc_zone_identifier  = ["subnet-------"] #você ainda vai precisar de uma vpc para fazer com que o código rode
