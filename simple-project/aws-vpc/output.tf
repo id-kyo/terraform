@@ -1,9 +1,14 @@
+output "vpc_id" {
+  value = aws_vpc.test_vpc
+}
 output "subnet_id" {
-  description = "ID da subnet criada na AWS"
-  value       = aws_subnet.subnet.id
+  value = aws_subnet.test_subnet.id
 }
 
-output "security_group_id" {
-  description = "ID do security group criado na AWS"
-  value       = aws_security_group.security_group.id
+output "internet_gateway_id" {
+  value = aws_internet_gateway.test_igw.id
+}
+
+output "route_table_id" {
+  value = aws_route_table.test_rt.id
 }
