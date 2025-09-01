@@ -1,24 +1,23 @@
-###############################
-######## ROUTE TABLE ##########
-###############################
+# ==================================================================
+# AWS ROUTE TABLE - PRIVATE SUBNETS
+# ==================================================================
 resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.vpc_01.id
 
+  route {
+    cidr_block     = "0.0.0.0/0"
+    nat_gateway_id = aws_nat_gateway.nat_1.id
+  }
+
   tags = {
-    Name = "Private Route Table"
+    Name = "Private Route Table | ${local.vpc_name}"
+    Type = "Private"
   }
 }
 
-resource "aws_route" "route_private_igw" {
-  route_table_id         = aws_route_table.private_route_table.id
-  destination_cidr_block = "0.0.0.0/0"
-  gateway_id             = aws_internet_gateway.igw.id
-}
-
-############################################
-### ROUTE TABLE ASSOCIATION FOR APP TIER ###
-############################################
-
+# ==================================================================
+# AWS ROUTE TABLE ASSOCIATIONS - PRIVATE APP SUBNETS
+# ==================================================================
 resource "aws_route_table_association" "nat_route_1" {
   subnet_id      = aws_subnet.private_app_subnet_1.id
   route_table_id = aws_route_table.private_route_table.id
@@ -29,17 +28,15 @@ resource "aws_route_table_association" "nat_route_2" {
   route_table_id = aws_route_table.private_route_table.id
 }
 
-
-############################################
-### ROUTE TABLE ASSOCIATION FOR DB TIER  ###
-############################################
-
+# ==================================================================
+# AWS ROUTE TABLE ASSOCIATIONS - PRIVATE DB SUBNETS
+# ==================================================================
 resource "aws_route_table_association" "nat_route_db_1" {
   subnet_id      = aws_subnet.private_db_subnet_1.id
-  route_table_id = aws_route_table.public_route_table.id
+  route_table_id = aws_route_table.private_route_table.id
 }
 
 resource "aws_route_table_association" "nat_route_db_2" {
   subnet_id      = aws_subnet.private_db_subnet_2.id
-  route_table_id = aws_route_table.public_route_table.id
+  route_table_id = aws_route_table.private_route_table.id
 }

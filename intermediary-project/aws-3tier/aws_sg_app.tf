@@ -1,40 +1,35 @@
-#####################################
-### SG Application tier (Bastion) ###
-#####################################
+# ==================================================================
+# AWS SECURITY GROUP - APPLICATION TIER
+# ==================================================================
 resource "aws_security_group" "ssh_security_group" {
-  name        = "SSH Access"
-  description = "Permite a porta 22 para acesso ssh"
+  name        = "Application Tier Security Group"
+  description = "Permite acesso SSH para a camada de aplicação"
   vpc_id      = aws_vpc.vpc_01.id
 
-  ingress = [
-    {
-      description      = "Ingress SSH"
-      from_port        = 22
-      to_port          = 22
-      protocol         = "tcp"
-      cidr_blocks      = ["${var.ssh_locate}"]
-      ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-      security_groups  = []
-      self             = false
-    }
-  ]
+  # ==================================================================
+  # INGRESS RULES - TRAFEGO DE ENTRADA
+  # ==================================================================
+  ingress {
+    description = "SSH access from specified IP"
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = [local.ssh_locate]
+  }
 
-  egress = [
-    {
-      description      = "regra de egress SSH"
-      from_port        = 0
-      to_port          = 0
-      protocol         = "-1"
-      cidr_blocks      = ["0.0.0.0/0"]
-      ipv6_cidr_blocks = []
-      prefix_list_ids  = []
-      security_groups  = []
-      self             = false
-    }
-  ]
+  # ==================================================================
+  # EGRESS RULES - TRAFEGO DE SAÍDA
+  # ==================================================================
+  egress {
+    description = "All outbound traffic"
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
 
   tags = {
-    Name = "SSH Security Group"
+    Name = "Application Tier Security Group | ${local.vpc_name}"
+    Tier = "Application"
   }
 }

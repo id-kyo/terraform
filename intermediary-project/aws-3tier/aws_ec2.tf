@@ -1,33 +1,68 @@
-######################################
-####### EC2 instance web Tier ########
-######################################
-
+# ==================================================================
+# AWS EC2 INSTANCES - WEB TIER
+# ==================================================================
 resource "aws_instance" "PublicWebTemplate" {
-  ami                    = "ami-052efd3df9dad4825"
-  instance_type          = "t2.micro"
+  ami                    = local.ami_id
+  instance_type          = local.instance_type
   subnet_id              = aws_subnet.public_web_subnet_1.id
   vpc_security_group_ids = [aws_security_group.webserver_security_group.id]
-  key_name               = "source_key"
-  user_data              = file("install-apache.sh") #Under the user_data attribute, a file is attached to the public instance for configuration.
-  #This will help check if the web server is functioning.
+  key_name               = local.key_name
+  user_data              = file("install-apache.sh")
+
+  # ==================================================================
+  # CONFIGURAÇÕES AVANÇADAS
+  # ==================================================================
+  monitoring = true
+
+  # ==================================================================
+  # CONFIGURAÇÕES DE STORAGE
+  # ==================================================================
+  root_block_device {
+    volume_size = 8
+    volume_type = "gp2"
+    encrypted   = true
+
+    tags = {
+      Name = "Web Tier Root Volume | ${local.vpc_name}"
+    }
+  }
+
   tags = {
-    Name = "web-asg" #"web", "asg = autoscaling group"
+    Name = "Web Tier Instance | ${local.vpc_name}"
+    Tier = "Web"
   }
 }
 
-
-######################################
-####### EC2 instance app Tier ########
-######################################
-
+# ==================================================================
+# AWS EC2 INSTANCES - APPLICATION TIER
+# ==================================================================
 resource "aws_instance" "private_app_template" {
-  ami                    = "ami-052efd3df9dad4825"
-  instance_type          = "t2.micro"
+  ami                    = local.ami_id
+  instance_type          = local.instance_type
   subnet_id              = aws_subnet.private_app_subnet_1.id
   vpc_security_group_ids = [aws_security_group.ssh_security_group.id]
-  key_name               = "source_key"
+  key_name               = local.key_name
+
+  # ==================================================================
+  # CONFIGURAÇÕES AVANÇADAS
+  # ==================================================================
+  monitoring = true
+
+  # ==================================================================
+  # CONFIGURAÇÕES DE STORAGE
+  # ==================================================================
+  root_block_device {
+    volume_size = 8
+    volume_type = "gp2"
+    encrypted   = true
+
+    tags = {
+      Name = "App Tier Root Volume | ${local.vpc_name}"
+    }
+  }
 
   tags = {
-    Name = "app-asg"
+    Name = "Application Tier Instance | ${local.vpc_name}"
+    Tier = "Application"
   }
 }

@@ -1,89 +1,86 @@
-###############################
-### PUBLIC SUBNET - 1 #########
-###############################
-
+# ==================================================================
+# AWS SUBNETS - PUBLIC WEB TIER
+# ==================================================================
 resource "aws_subnet" "public_web_subnet_1" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.public_web_subnet_1_cidr
-  availability_zone       = "us-east-1a"
+  cidr_block              = local.public_web_subnet_1_cidr
+  availability_zone       = local.az_1
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "Public Subnet 1"
+    Name = "Public Subnet 1 | Web Tier"
+    Tier = "Web"
+    Type = "Public"
   }
 }
-
-###############################
-### PUBLIC SUBNET - 2 #########
-###############################
 
 resource "aws_subnet" "public_web_subnet_2" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.public_web_subnet_2_cidr
-  availability_zone       = "us-east-1b"
+  cidr_block              = local.public_web_subnet_2_cidr
+  availability_zone       = local.az_2
   map_public_ip_on_launch = true
 
   tags = {
-    Name = "Public Subnet 2"
+    Name = "Public Subnet 2 | Web Tier"
+    Tier = "Web"
+    Type = "Public"
   }
 }
 
-###############################
-### PRIVATE SUBNET - 1 ########
-###############################
-
+# ==================================================================
+# AWS SUBNETS - PRIVATE APP TIER
+# ==================================================================
 resource "aws_subnet" "private_app_subnet_1" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private_app_subnet_1_cidr
-  availability_zone       = "us-east-1a"
+  cidr_block              = local.private_app_subnet_1_cidr
+  availability_zone       = local.az_1
   map_public_ip_on_launch = false
 
   tags = {
     Name = "Private Subnet 1 | App Tier"
+    Tier = "Application"
+    Type = "Private"
   }
 }
 
-###############################
-### PRIVATE SUBNET - 2 ########
-###############################
-
 resource "aws_subnet" "private_app_subnet_2" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private_app_subnet_1_cidr
-  availability_zone       = "us-east-1b"
+  cidr_block              = local.private_app_subnet_2_cidr
+  availability_zone       = local.az_2
   map_public_ip_on_launch = false
 
   tags = {
     Name = "Private Subnet 2 | App Tier"
+    Tier = "Application"
+    Type = "Private"
   }
 }
 
-###############################
-### PRIVATE SUBNET-DB - 1 #####
-###############################
-
+# ==================================================================
+# AWS SUBNETS - PRIVATE DATABASE TIER
+# ==================================================================
 resource "aws_subnet" "private_db_subnet_1" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private_db_subnet_1_cidr
-  availability_zone       = "us-east-1a"
+  cidr_block              = local.private_db_subnet_1_cidr
+  availability_zone       = local.az_1
   map_public_ip_on_launch = false
 
   tags = {
     Name = "Private Subnet 1 | DB Tier"
+    Tier = "Database"
+    Type = "Private"
   }
 }
 
-###############################
-### PRIVATE SUBNET-DB - 2 #####
-###############################
-
 resource "aws_subnet" "private_db_subnet_2" {
   vpc_id                  = aws_vpc.vpc_01.id
-  cidr_block              = var.private_db_subnet_2_cidr
-  availability_zone       = "us-east-1b"
+  cidr_block              = local.private_db_subnet_2_cidr
+  availability_zone       = local.az_2
   map_public_ip_on_launch = false
 
   tags = {
     Name = "Private Subnet 2 | DB Tier"
+    Tier = "Database"
+    Type = "Private"
   }
 }
