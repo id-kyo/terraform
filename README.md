@@ -112,12 +112,6 @@ Contribuições são bem-vindas! Se você tem sugestões de melhorias, novos pro
 3. Fazer commit das mudanças
 4. Abrir um Pull Request
 
-## 📞 Contato
-
-- **LinkedIn**: [Seu LinkedIn]
-- **GitHub**: [Seu GitHub]
-- **Email**: [Seu Email]
-
 ## 📄 Licença
 
 Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
