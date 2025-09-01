@@ -1,10 +1,10 @@
 # ==================================================================
-# AWS INTERNET GATEWAY
+# PROVIDER - AWS DEFAULT
 # ==================================================================
-resource "aws_internet_gateway" "test_igw" {
-  vpc_id = aws_vpc.test_vpc.id
+provider "aws" {
+  region = local.aws_region
 
-  tags = {
-    Name = "test-services-igw"
+  default_tags {
+    tags = local.aws_default_tags
   }
 }
