@@ -5,12 +5,12 @@ locals {
   # ==================================================================
   # GENERAL
   # ==================================================================
-  client_name = "caio"
+  owner = "caio"
   
   # ==================================================================
   # AWS GENERAL
   # ==================================================================
-  aws_environment = "development"
+  aws_environment = "develop"
   aws_region      = "us-east-1"
   
   # ==================================================================
@@ -71,7 +71,7 @@ locals {
   # AWS DEFAULT TAGS
   # ==================================================================
   aws_default_tags = {
-    owner           = local.client_name
+    owner           = local.owner
     managed_by      = "terraform"
     environment     = local.aws_environment
     source_project  = "aws-3tier"
