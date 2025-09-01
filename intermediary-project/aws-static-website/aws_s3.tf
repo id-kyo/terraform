@@ -3,10 +3,6 @@
 # ==================================================================
 resource "aws_s3_bucket" "website_bucket" {
   bucket = local.bucket_name
-
-  tags = merge(local.aws_default_tags, {
-    Name = "Static Website Bucket | ${local.bucket_name}"
-  })
 }
 
 # ==================================================================

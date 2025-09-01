@@ -11,11 +11,6 @@ resource "aws_s3_object" "index_html" {
   source       = local.website_files["index.html"].source
   acl          = local.website_files["index.html"].acl
   content_type = local.website_files["index.html"].content_type
-
-  tags = {
-    Name = "Index HTML | ${local.bucket_name}"
-    Type = "Website Content"
-  }
 }
 
 # ==================================================================
@@ -27,11 +22,6 @@ resource "aws_s3_object" "error_html" {
   source       = local.website_files["error.html"].source
   acl          = local.website_files["error.html"].acl
   content_type = local.website_files["error.html"].content_type
-
-  tags = {
-    Name = "Error HTML | ${local.bucket_name}"
-    Type = "Website Content"
-  }
 }
 
 # ==================================================================
@@ -43,9 +33,4 @@ resource "aws_s3_object" "profile_image" {
   source       = local.website_files["profile.png"].source
   acl          = local.website_files["profile.png"].acl
   content_type = local.website_files["profile.png"].content_type
-
-  tags = {
-    Name = "Profile Image | ${local.bucket_name}"
-    Type = "Website Content"
-  }
 }

@@ -16,7 +16,7 @@ locals {
   # ==================================================================
   # S3 BUCKET CONFIGURATION
   # ==================================================================
-  bucket_name = "unique-global-name"
+  bucket_name = "665229571779-unique-global-name"
   
   # ==================================================================
   # WEBSITE CONFIGURATION
@@ -29,17 +29,17 @@ locals {
   # ==================================================================
   website_files = {
     "index.html" = {
-      source      = "/objects/index.html"
+      source      = "objects/index.html"
       content_type = "text/html"
       acl         = "public-read"
     }
     "error.html" = {
-      source      = "/objects/error.html"
+      source      = "objects/error.html"
       content_type = "text/html"
       acl         = "public-read"
     }
     "profile.png" = {
-      source      = "/objects/profile.png"
+      source      = "objects/profile.png"
       content_type = "image/png"
       acl         = "public-read"
     }
